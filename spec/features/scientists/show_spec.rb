@@ -43,7 +43,7 @@ RSpec.describe "Scientist Show Page", type: :feature do
         # Maybe I can get it this time.  It's more concise/dynamic.
       # @scientist_1.experiments.each do |experiment|
       #   expect(page).to have_content(experiment.name)
-      end
+      # end
     end
   end
 end
