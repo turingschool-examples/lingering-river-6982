@@ -1,0 +1,23 @@
+<h1> Scientist Information: </h1>
+
+  <section id="scientist_info">
+
+    <h3> Name: <%= @scientist.name %></h3>
+
+    <p> Specialty: <%= @scientist.specialty %></p>
+
+    <p> Alma Mater: <%= @scientist.university %></p>
+
+    <p> Lab: <%= @scientist.lab.name %></p>
+
+    <ul id ="scientist_experiments">
+      <%= "Experiments:" %>
+        <% @scientist.experiments.each do |experiment| %>
+          <li id="experiment-#{experiment.id}">
+            <%= experiment.name %>
+            <%= button_to "Remove #{experiment.name}", remove_scientist_experiment_path(@scientist, experiment), 
+            method: :delete %>
+          </li>
+        <% end %>
+    </ul>
+  </section>
