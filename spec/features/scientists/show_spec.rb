@@ -30,20 +30,21 @@ RSpec.describe "Scientist Show Page", type: :feature do
       # - university where they got their degree
       expect(page).to have_content("Name: #{@scientist_1.name}")
       expect(page).to have_content("Specialty: #{@scientist_1.specialty}")
-      expect(page).to have_content("Degree From: #{@scientist_1.university}")
+      expect(page).to have_content("University: #{@scientist_1.university}")
 
       # And I see the name of the lab where this scientist works
       expect(page).to have_content("#{@scientist_1.lab.name}")
 
       # And I see the names of all of the experiments this scientist is running
-      expect(page).to have_content("Mr. Hyde")
-      expect(page).to have_content("Antidotes")
+      # expect(page).to have_content("Mr. Hyde")
+      # expect(page).to have_content("Antidotes")
       
       # I haven't been able to get this to work in the past.
         # Maybe I can get it this time.  It's more concise/dynamic.
-      # @scientist_1.experiments.each do |experiment|
-      #   expect(page).to have_content(experiment.name)
-      # end
+          # Sweet! I got it to work!
+      @scientist_1.experiments.each do |experiment|
+        expect(page).to have_content(experiment.name)
+      end
     end
   end
 end
