@@ -3,6 +3,6 @@ class Experiment < ApplicationRecord
   has_many :scientists, through: :scientist_experiments
 
   def long_running_experiments
-    Experiment.where("num_months > 6")
+    Experiment.where("num_months > 6").order(num_months: :desc)
   end
 end
