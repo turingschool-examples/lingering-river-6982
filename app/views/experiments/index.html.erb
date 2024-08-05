@@ -1,0 +1,10 @@
+<h1> Experiments Index: </h1>
+
+<ul id ="experiments">
+      <%= Experiments: %>
+        <% @experiments.longest_running.each do |experiment| %>
+          <li id="experiment-#{experiment.id}">
+            <%= experiment.name %>
+          </li>
+        <% end %>
+    </ul>
