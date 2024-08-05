@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe "Experiment Index Page", type: :feature do
   before :each do
-    @experiment_1 = Experiment.create!(name: "Mr. Hyde", objective: "Change Bodies", num_months: 1)
+    @experiment_1 = Experiment.create!(name: "Mr. Hyde", objective: "Change Bodies", num_months: 6)
     @experiment_2 = Experiment.create!(name: "Antidotes", objective: "Protect From Poisoning", num_months: 25)
-    @experiment_3 = Experiment.create!(name: "Flubber", objective: "Flub It", num_months: 6)
+    @experiment_3 = Experiment.create!(name: "Flubber", objective: "Flub It", num_months: 7)
     @experiment_4 = Experiment.create!(name: "Perpetual Motion", objective: "Save Energy", num_months: 13)
   end
   context "User Story #3" do
