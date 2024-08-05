@@ -8,6 +8,7 @@
 <li> 
   <% @scientist.experiments.each do |experiment| %>
     <%= "#{experiment.name}" %>
+    <%= button_to "Remove Experiment", "/scientists/#{@scientist.id}?experiment_id=#{experiment.id}", method: :delete %>
   <% end %>
 </li>
 

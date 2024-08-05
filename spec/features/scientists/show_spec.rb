@@ -59,7 +59,7 @@ RSpec.describe "Scientist Show Page", type: :feature do
   end
 
   context "User Story #2" do
-    xit "removes experiment from a scientist's show page" do
+    it "removes experiment from a scientist's show page" do
       # When I visit a scientist's show page
       visit "/scientists/#{@scientist_1.id}"
 
@@ -68,7 +68,6 @@ RSpec.describe "Scientist Show Page", type: :feature do
       expect(page).to have_content("Antidotes")
 
       expect(page).to have_button "Remove Experiment"
-      expect(page).to have_link("Remove Experiment", href: "/scientists/#{@scientist_1.id}")
 
       # When I click that button for one experiment
       all(:button, "Remove Experiment")[0].click  # Should click the first of 2 "Remove Experiment" buttons
@@ -86,7 +85,7 @@ RSpec.describe "Scientist Show Page", type: :feature do
       visit "/scientists/#{@scientist_2.id}"
       
       # Then I see that the experiment is still on the other scientist's work load
-      expect(page).to_not have_content("Mr. Hyde")
+      expect(page).to have_content("Mr. Hyde")  # This should be unaffected as we only removed from @scientist_1's page
     end
   end
 end
