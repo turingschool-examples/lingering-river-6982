@@ -20,8 +20,8 @@ RSpec.describe "Experiment Index Page", type: :feature do
       expect(page).to_not have_content("Mr. Hyde")
 
       # And I see the names are in descending order (longest to shortest)
-      expect("Antidotes").to appear_before("Flubber")
-      expect("Flubber").to appear_before("Perpetual Motion")
+      expect("Antidotes").to appear_before("Perpetual Motion")
+      expect("Perpetual Motion").to appear_before("Flubber")
     end
   end
 end
